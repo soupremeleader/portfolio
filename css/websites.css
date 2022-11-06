@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@200&display=swap");
+body {
+  margin: 0;
+  padding: 0.5% 0.2% 0.5% 0.2%;
+  background-color: rgb(77, 89, 91);
+  color: rgba(246, 242, 240, 0.8);
+  font-family: Archivo;
+  cursor: default;
+}
+
+nav {
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: rgb(77, 89, 91);
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  nav {
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    border-radius: 5px;
+  }
+  nav #title {
+    font-size: 1.8em;
+    width: 90%;
+  }
+}
+@media (min-width: 900px) {
+  nav #title {
+    flex: 2;
+    margin: 0 4px 0 2px;
+    padding: 4px 4px 4px 1%;
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width: 900px) {
+  #links {
+    display: flex;
+    flex: 1;
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    border-radius: 5px;
+  }
+}
+
+#burgerInput {
+  display: none;
+}
+
+#burgerLabel {
+  display: none;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  #burgerLabel {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1%;
+    cursor: pointer;
+  }
+  #burgerLabel > img {
+    width: 20%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #menu {
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+  }
+}
+@media (min-width: 900px) {
+  #menu {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #burgerInput:checked ~ #menu {
+    position: static;
+    opacity: 1;
+    transition: opacity 0.6s linear;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #menu > a {
+    max-height: 0%;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    transition: 0.5s ease-in-out;
+    color: rgba(246, 242, 240, 0.8);
+    text-decoration: none;
+    align-self: flex-end;
+  }
+}
+@media (min-width: 900px) {
+  #menu > a {
+    justify-content: space-evenly;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    flex: 1;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    color: rgba(246, 242, 240, 0.8);
+    text-decoration: none;
+  }
+  #menu > a:hover {
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #current {
+    cursor: default;
+    width: 100%;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    text-align: right;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+@media (min-width: 900px) {
+  #current {
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    flex: 1;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
+  background-color: rgb(77, 89, 91);
+}
+footer > div {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+footer > div #contactInput {
+  display: none;
+}
+footer > div #contactLabel {
+  cursor: pointer;
+}
+footer > div #contact {
+  margin: 0.5% 1% 0.5% 1%;
+  padding: 4px 0 4px 0;
+  text-align: right;
+  transition: 0.5s ease-in-out;
+  background-color: rgba(246, 242, 240, 0.2);
+}
+footer > div #contact #emailInput:invalid {
+  border: none;
+  outline: 2px solid red;
+}
+footer > div form {
+  position: absolute;
+  opacity: 0;
+}
+footer > div #contactInput:checked ~ form {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  opacity: 1;
+  transition: opacity 0.6s linear;
+}
+footer > div #contactIcons {
+  height: 5vh;
+  aspect-ratio: 2/1;
+  display: flex;
+}
+footer > div #contactIcons > a {
+  flex-grow: 1;
+}
+footer > div #contactIcons > a > div {
+  width: 90%;
+  margin: 5%;
+}
+footer > div #contactIcons > a > div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.8;
+}
+
+body {
+  height: 100vh;
+}
+
+header {
+  margin: 0;
+  padding: 2% 12% 2%;
+}
+
+main {
+  display: flex;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+}
+main section {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0 0.5% 1% 1%;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main section {
+    width: 98%;
+  }
+}
+@media (min-width: 900px) {
+  main section {
+    width: 66.5%;
+  }
+}
+main section > div {
+  display: flex;
+}
+main section > div .slide {
+  opacity: 0.9;
+  transition: 0.5s ease-in-out;
+}
+main section > div > div {
+  padding: 1%;
+}
+main section > div .preview {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.5s ease-in-out;
+}
+main section > div .preview:hover {
+  opacity: 0.9;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main section .text-cont {
+    order: 1;
+  }
+}
+main img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main aside {
+  margin: 0;
+  padding: 0% 1% 1% 0.5%;
+  width: 33.5%;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main aside {
+    width: 98%;
+  }
+  main aside > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+main aside > img {
+  opacity: 0.9;
+}
+main .img-cont {
+  min-width: 300px;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main section .text-cont {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  main h2 {
+    display: none;
+  }
+  main section,
+main aside {
+    position: relative;
+  }
+  main section .text-cont,
+main aside .text-cont {
+    opacity: 0;
+    width: 92%;
+    height: 94%;
+    padding: 3%;
+    position: absolute;
+    transition: 0.5s ease;
+    background-color: rgba(77, 89, 91, 0.8);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  main section > div,
+main aside > div {
+    display: flex;
+  }
+  main section > div:hover .img-cont,
+main aside > div:hover .img-cont {
+    opacity: 0.7;
+  }
+  main section > div:hover .text-cont,
+main aside > div:hover .text-cont {
+    opacity: 1;
+  }
+  main #mobile-text {
+    display: none;
+  }
+}/*# sourceMappingURL=websites.css.map */

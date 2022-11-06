@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/websites.css">
+    <title>websites</title>
+</head>
+
+<body>
+    <nav>
+        <div id="title">
+            meuks portfolio
+        </div>
+        <div id="links">
+            <input type="checkbox" id="burgerInput" />
+            <label for="burgerInput" id="burgerLabel"><img alt="burger icon" src="./img/hamburger button.png" /></label>
+            <div id="menu">
+                <a href="index.html"> overzicht </a>
+                <div id="current"> websites </div>
+                <a href="posters.html"> posters </a>
+                <a href="kleding.html"> kleding </a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        Voor mijn vorige opleiding, Computer Science & Engineering aan TuDelft, heb ik een aantal websites moeten
+        ontwerpen en games moeten maken. Dit zijn twee highlights van die ervaring.
+    </header>
+    <main>
+        <section>
+            <h2>fighting poverty</h2>
+            <div>
+                <div class="img-cont">
+                    <img class="slide" src="img/FP-kies gemeente.png">
+                    <img class="slide" src="img/FP-overzicht.png" style="display: none">
+                    <img class="slide" src="img/FP-signals.png" style="display: none">
+                </div>
+                <div class="text-cont"><span>Deze website heb ik samen met een team ontworpen om armoede te bestrijden
+                        in Nederland. Uit
+                        onderzoek blijkt dat er negen signalen zijn die aangeven dat mensen in armoede leven. Door deze
+                        signalen in kaart te brengen kunnen maatschappelijk werkers eerder mensen helpen en toekomstige
+                        problemen voorkomen.
+                        <br />
+                        In een later stadium kan dit project niet alleen berekenen hoe groot het slagingspercentage is
+                        van
+                        technieken die armoede bestrijden, maar daarnaast ook met AI problematische wijken van te voren
+                        detecteren. Dat laatste zou betekenen dat er hulp aangeboden kan worden aan mensen voordat zij
+                        uberhaupt in armoede leven. </span></div>
+            </div>
+            <div>
+                <div>
+                    <img class="preview" src="img/FP-kies gemeente.png" onclick="current(0)" style="opacity: .9">
+                </div>
+                <div>
+                    <img class="preview" src="img/FP-overzicht.png" onclick="current(1)">
+                </div>
+                <div>
+                    <img class="preview" src="img/FP-signals.png" onclick="current(2)">
+                </div>
+            </div>
+            <div id="mobile-text"><span>Deze website heb ik samen met een team ontworpen om armoede te bestrijden
+                    in Nederland. Uit
+                    onderzoek blijkt dat er negen signalen zijn die aangeven dat mensen in armoede leven. Door deze
+                    signalen in kaart te brengen kunnen maatschappelijk werkers eerder mensen helpen en toekomstige
+                    problemen voorkomen.
+                    <br />
+                    In een later stadium kan dit project niet alleen berekenen hoe groot het slagingspercentage is
+                    van
+                    technieken die armoede bestrijden, maar daarnaast ook met AI problematische wijken van te voren
+                    detecteren. Dat laatste zou betekenen dat er hulp aangeboden kan worden aan mensen voordat zij
+                    uberhaupt in armoede leven. </span></div>
+        </section>
+        <aside>
+            <h2>mastermind</h2>
+            <div>
+                <div class="img-cont">
+                    <img alt="mastermind" src="img/Mastermind.png">
+                </div>
+                <div class="text-cont"><span>Voor mijn vorige opleiding heb ik een Mastermind game in javascript
+                        opgezet. Dit moest een multiplayer game zijn waar je een code kon toesturen naar vrienden om het
+                        spel samen te kunnen spelen.</span></div>
+            </div>
+        </aside>
+    </main>
+</body>
+
+<footer>
+    <div>
+        <div id="contact">
+            <input type="checkbox" id="contactInput" />
+            <label for="contactInput" id="contactLabel">Contact me!</label>
+            <form>
+                <input type="text" id="nameInput" placeholder="naam" />
+                <label for="nameInput" id="nameLabel"></label>
+                <input type="email" id="emailInput" placeholder="email" />
+                <label for="emailInput" id="emailLabel"></label>
+                <textarea id="message" placeholder="bericht"></textarea>
+                <label for="message" id="messageLabel"></label>
+                <input type="submit" value="verstuur">
+            </form>
+        </div>
+        <div id="contactIcons">
+        <a href="https://www.instagram.com/meukwinkelman/">
+            <div>
+                <img alt="instagram icon" src="img/insta.png" />
+            </div>
+        </a>
+        <a href="https://github.com/soupremeleader/">
+            <div>
+                <img alt="github icon" src="img/github.png" />
+            </div>
+        </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    function current(n) {
+        showDiv(slideIndex = n);
+    }
+
+    function showDiv(n) {
+        let slides = document.getElementsByClassName("slide");
+        let previews = document.getElementsByClassName("preview");
+
+        if (n > slides.length) { slideIndex = 0 };
+        if (n < 1) { slideIndex = slides.length - 1 };
+
+        for (let i = 0; i < slides.length; i++) {
+            if (i === n) {
+                slides[i].style.display = "block";
+                previews[i].style.opacity = "0.9";
+            } else {
+                slides[i].style.display = "none";
+                previews[i].style.opacity = "0.6";
+            }
+        }
+    }
+</script>

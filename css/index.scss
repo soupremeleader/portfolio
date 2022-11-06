@@ -1,0 +1,116 @@
+@import './nav';
+
+main {
+    display: flex;
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        flex-direction: column-reverse;
+    }
+
+    @media(min-width: 900px) {
+        flex-direction: row;
+    }
+}
+
+section {
+    >header {
+        margin: 0;
+        padding: 12% 12% 2%;
+    }
+
+    >div {
+        display: flex;
+        //background-color: rgb(157, 155, 155, 0.2);
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            margin: 3%;
+        }
+
+        @media(min-width: 900px) {
+            height: 57%;
+            margin: 0% 3% 7% 3%;
+
+        }
+
+        >a {
+            width: 33%;
+            text-decoration: none;
+            align-self: center;
+
+            >div {
+                height: auto;
+                width: 96%;
+                margin: 2%;
+                padding: 2%;
+                align-items: center;
+                /* box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.1); */
+                position: relative;
+                align-items: center;
+                opacity: 0.8;
+
+                >img {
+                    width: 100%;
+                    object-fit: fill;
+                    left: 0px;
+                    top: 0px;
+                    z-index: -1;
+
+                }
+
+                >div {
+                    opacity: 0;
+                    transition: 0.5s ease-in-out;
+                    color: $primColour;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    display: flex;
+                    align-items: center;
+                    padding: 4%;
+                }
+
+                &:hover {
+                    >img {
+                        opacity: 0.3;
+                    }
+
+                    >div {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+aside {
+    padding: 0 1%;
+    border: 2px solid $tPColour;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto auto;
+    /* box-shadow: 7px 7px 3px rgba(0, 0, 0, 0.05); */
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        margin: 3%;
+    }
+
+    @media(min-width: 900px) {
+        margin: 1% 1% 0 1%;
+    }
+
+    .border {
+        border-bottom: 2px solid $tPColour;
+        height: 80%;
+    }
+}
+
+.years {
+    list-style-type: none;
+    color: rgb(157, 155, 155);
+    padding: 0px;
+    margin: 0px;
+    font-size: 0.8em;
+}

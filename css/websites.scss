@@ -1,0 +1,139 @@
+@import './nav';
+
+body {
+    height: 100vh;
+}
+
+header {
+    margin: 0;
+    padding: 2% 12% 2%;
+}
+
+main {
+    display: flex;
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        flex-direction: column;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0 0.5% 1% 1%;
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            width: 98%;
+        }
+
+        @media (min-width: 900px) {
+            width: 66.5%;
+        }
+
+        >div {
+            display: flex;
+
+            .slide {
+                opacity: 0.9;
+                transition: 0.5s ease-in-out;
+
+            }
+
+            >div {
+                padding: 1%
+            }
+
+            .preview {
+                cursor: pointer;
+                opacity: 0.6;
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                    opacity: .9;
+                }
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            .text-cont {
+                order: 1;
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    aside {
+        margin: 0;
+        padding: 0% 1% 1% 0.5%;
+        width: 33.5%;
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            width: 98%;
+        >div {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        >img {
+            opacity: 0.9;
+        }
+    }
+
+    .img-cont {
+        min-width: 300px;
+    }
+
+    // text mobile 
+    @media (min-width: 300px) and (max-width: 900px) {
+        section .text-cont {
+            display: none;
+        }
+    }
+
+    // text hover
+    @media (min-width: 900px) {
+        h2 {
+            display: none;
+        }
+
+        section,
+        aside {
+            position: relative;
+
+            .text-cont {
+                opacity: 0;
+                width: 92%;
+                height: 94%;
+                padding: 3%;
+                position: absolute;
+                transition: .5s ease;
+                background-color: rgba(77, 89, 91, 0.8);
+                text-shadow: 1px 1px rgb(0, 0, 0, 0.1);
+            }
+
+            >div {
+                display: flex;
+
+                &:hover {
+                    .img-cont {
+                        opacity: 0.7;
+                    }
+
+                    .text-cont {
+                        opacity: 1;
+                    }
+
+                }
+            }
+        }
+
+        #mobile-text {
+            display: none;
+        }
+    }
+}

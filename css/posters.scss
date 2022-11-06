@@ -1,0 +1,35 @@
+@import './nav';
+
+header {
+    margin: 4vh auto;
+}
+main {
+    display: flex;
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        flex-direction: column;
+    }  
+
+    div {
+        display: flex;
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            width: 90%;
+            height: 40%;
+            margin: 5% auto;
+        }
+
+        @media(min-width: 900px) {
+            width: 48%;
+            height: 70vh;
+            padding: auto 1%;
+            margin: 3vh auto;
+        }
+         
+        
+        img {
+            object-fit: contain;
+            width: 100%;
+        }
+    }
+}

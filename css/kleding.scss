@@ -1,0 +1,134 @@
+@import './nav';
+
+header {
+    margin: 0;
+    padding: 2% 12% 2%;
+
+    display: inline-block;
+}
+
+main {
+    @media (min-width: 300px) and (max-width: 900px) {
+        width: 100vw;
+    }
+
+    @media(min-width: 900px) {
+        display: flex;
+    }
+
+    #dz,
+    #kb,
+    #crochet {
+        display: flex;
+
+        @media (min-width: 300px) and (max-width: 900px) {
+            flex-direction: column;
+        }
+
+        >div {
+            display: flex;
+
+            >div {
+                @media (min-width: 300px) and (max-width: 900px) {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+
+    @media(min-width: 900px) {
+        #vereniging {
+            width: 66.5%;
+
+            .img-cont>div {
+                width: 50%;
+            }
+        }
+
+        #crochet {
+            width: 33.5%;
+
+            >div {
+                flex-direction: column;
+
+                >div {
+                    height: 50%;
+                }
+            }
+        }
+    }
+
+    img {
+        padding: 5%;
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+    }
+
+    // text 
+    @media (min-width: 300px) and (max-width: 900px) {
+
+        #dz,
+        #kb {
+            margin-bottom: 5%;
+        }
+
+        #crochet {
+            margin-bottom: 3%;
+        }
+
+        .text-cont {
+            background-color: $tPColour;
+            padding: 2%;
+            margin: 0 2%;
+        }
+    }
+
+    // hover text
+    @media(min-width: 900px) {
+
+        #vereniging,
+        #crochet {
+            position: relative;
+        }
+
+        .text-cont {
+            opacity: 0;
+        }
+
+        #dz:hover,
+        #kb:hover,
+        #crochet:hover {
+            .img-cont {
+                opacity: 0.7;
+            }
+
+            .text-cont {
+                opacity: 1;
+            }
+        }
+
+        img {
+            transition: .5s ease;
+        }
+
+        #vereniging .text-cont {
+            height: 40%;
+            padding: 5%;
+        }
+
+        #crochet .text-cont {
+            height: 90%;
+            padding: 10% 5%;
+        }
+
+        .text-cont {
+            width: 90%;
+            position: absolute;
+            transition: .5s ease;
+            background-color: rgba(77, 89, 91, 0.8);
+            text-shadow: 1px 1px rgb(0, 0, 0, 0.1) // border: 2px solid red;
+        }
+    }
+}

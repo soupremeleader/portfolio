@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@200&display=swap');
+
+$primColour : rgba(246, 242, 240, 0.8);
+$tPColour: rgba(246, 242, 240, 0.2);
+$bgColour: rgba(77, 89, 91, 1);
+
+body {
+    margin: 0;
+    padding: 0.5% 0.2% 0.5% 0.2%;
+
+    background-color: $bgColour;
+    color: $primColour;
+    font-family: Archivo;
+    cursor: default;
+}
+
+nav {
+    display: flex;
+    position: sticky;
+    top: 0px;
+    background-color: $bgColour;
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        border: 2px solid $tPColour;
+        border-radius: 5px;
+
+        #title {
+            font-size: 1.8em;
+            width: 90%;
+        }
+    }
+
+    @media(min-width: 900px) {
+        #title {
+            flex: 2;
+            margin: 0 4px 0 2px;
+            padding: 4px 4px 4px 1%;
+            border: 2px solid $tPColour;
+            font-size: 1.8em;
+        }
+    }
+}
+
+
+#links {
+    @media(min-width: 900px) {
+        display: flex;
+        flex: 1;
+        border: 2px solid $tPColour;
+        border-radius: 5px;
+    }
+}
+
+
+#burgerInput {
+    display: none;
+}
+
+#burgerLabel {
+    display: none;
+
+    @media (min-width: 300px) and (max-width: 900px) {
+        display: flex;
+        justify-content: flex-end;
+        margin: 1%;
+        cursor: pointer;
+
+        >img {
+            width: 20%;
+        }
+    }
+}
+
+#menu {
+    @media (min-width: 300px) and (max-width: 900px) {
+        position: absolute;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 2%;
+    }
+
+    @media(min-width: 900px) {
+        display: flex;
+        flex: 1;
+        align-items: center;
+    }
+}
+
+#burgerInput:checked~#menu {
+    @media (min-width: 300px) and (max-width: 900px) {
+        position: static;
+        opacity: 1;
+        transition: opacity 0.6s linear;
+    }
+}
+
+
+#menu>a {
+    @media (min-width: 300px) and (max-width: 900px) {
+        max-height: 0%;
+        margin: 0.5% 1% 0.5% 1%;
+        padding: 4px 0 4px 0;
+        transition: 0.5s ease-in-out;
+        color: $primColour;
+        text-decoration: none;
+        align-self: flex-end;
+    }
+
+    @media(min-width: 900px) {
+        justify-content: space-evenly;
+        margin: 0.5% 1% 0.5% 1%;
+        padding: 4px 0 4px 0;
+        flex: 1;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        color: $primColour;
+        text-decoration: none;
+
+        &:hover {
+            background-color: $tPColour;
+        }
+    }
+}
+
+#current {
+    @media(min-width: 300px) and (max-width: 900px) {
+        cursor: default;
+        width: 100%;
+        margin: 0.5% 1% 0.5% 1%;
+        padding: 4px 0 4px 0;
+        text-align: right;
+        transition: 0.5s ease-in-out;
+        background-color: $tPColour;
+    }
+
+    @media (min-width: 900px) {
+        margin: 0.5% 1% 0.5% 1%;
+        padding: 4px 0 4px 0;
+        flex: 1;
+        text-align: center;
+        transition: 0.5s ease-in-out;
+        background-color: $tPColour;
+    }
+}
+
+footer {
+    position: sticky;
+    bottom: 0px;
+    background-color: $bgColour;
+
+    >div {
+
+        display: flex;
+        justify-content: center;
+        height: 100%;
+
+        #contactInput {
+            display: none;
+        }
+
+        #contactLabel {
+            cursor:pointer;
+        }
+
+        #contact {
+            margin: 0.5% 1% 0.5% 1%;
+            padding: 4px 0 4px 0;
+            text-align: right;
+            transition: 0.5s ease-in-out;
+            background-color: $tPColour;
+
+            #emailInput:invalid {
+                border: none;
+                outline: 2px solid red;
+            }
+        }
+
+        form {
+            position: absolute;
+            opacity: 0;
+        }
+
+        #contactInput:checked~form {
+            display: flex;
+            flex-direction: column;
+            position: static;
+            opacity: 1;
+            transition: opacity 0.6s linear;
+        }
+
+        #contactIcons {
+            height: 5vh;
+            aspect-ratio: 2/1;
+            display: flex;
+
+            >a {
+                flex-grow: 1;
+
+                >div {
+                    width: 90%;
+                    margin: 5%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: contain;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+    }
+}

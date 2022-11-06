@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@200&display=swap");
+body {
+  margin: 0;
+  padding: 0.5% 0.2% 0.5% 0.2%;
+  background-color: rgb(77, 89, 91);
+  color: rgba(246, 242, 240, 0.8);
+  font-family: Archivo;
+  cursor: default;
+}
+
+nav {
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: rgb(77, 89, 91);
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  nav {
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    border-radius: 5px;
+  }
+  nav #title {
+    font-size: 1.8em;
+    width: 90%;
+  }
+}
+@media (min-width: 900px) {
+  nav #title {
+    flex: 2;
+    margin: 0 4px 0 2px;
+    padding: 4px 4px 4px 1%;
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    font-size: 1.8em;
+  }
+}
+
+@media (min-width: 900px) {
+  #links {
+    display: flex;
+    flex: 1;
+    border: 2px solid rgba(246, 242, 240, 0.2);
+    border-radius: 5px;
+  }
+}
+
+#burgerInput {
+  display: none;
+}
+
+#burgerLabel {
+  display: none;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  #burgerLabel {
+    display: flex;
+    justify-content: flex-end;
+    margin: 1%;
+    cursor: pointer;
+  }
+  #burgerLabel > img {
+    width: 20%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #menu {
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+  }
+}
+@media (min-width: 900px) {
+  #menu {
+    display: flex;
+    flex: 1;
+    align-items: center;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #burgerInput:checked ~ #menu {
+    position: static;
+    opacity: 1;
+    transition: opacity 0.6s linear;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #menu > a {
+    max-height: 0%;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    transition: 0.5s ease-in-out;
+    color: rgba(246, 242, 240, 0.8);
+    text-decoration: none;
+    align-self: flex-end;
+  }
+}
+@media (min-width: 900px) {
+  #menu > a {
+    justify-content: space-evenly;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    flex: 1;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    color: rgba(246, 242, 240, 0.8);
+    text-decoration: none;
+  }
+  #menu > a:hover {
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  #current {
+    cursor: default;
+    width: 100%;
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    text-align: right;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+@media (min-width: 900px) {
+  #current {
+    margin: 0.5% 1% 0.5% 1%;
+    padding: 4px 0 4px 0;
+    flex: 1;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+    background-color: rgba(246, 242, 240, 0.2);
+  }
+}
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
+  background-color: rgb(77, 89, 91);
+}
+footer > div {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+footer > div #contactInput {
+  display: none;
+}
+footer > div #contactLabel {
+  cursor: pointer;
+}
+footer > div #contact {
+  margin: 0.5% 1% 0.5% 1%;
+  padding: 4px 0 4px 0;
+  text-align: right;
+  transition: 0.5s ease-in-out;
+  background-color: rgba(246, 242, 240, 0.2);
+}
+footer > div #contact #emailInput:invalid {
+  border: none;
+  outline: 2px solid red;
+}
+footer > div form {
+  position: absolute;
+  opacity: 0;
+}
+footer > div #contactInput:checked ~ form {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  opacity: 1;
+  transition: opacity 0.6s linear;
+}
+footer > div #contactIcons {
+  height: 5vh;
+  aspect-ratio: 2/1;
+  display: flex;
+}
+footer > div #contactIcons > a {
+  flex-grow: 1;
+}
+footer > div #contactIcons > a > div {
+  width: 90%;
+  margin: 5%;
+}
+footer > div #contactIcons > a > div img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.8;
+}
+
+header {
+  margin: 0;
+  padding: 2% 12% 2%;
+  display: inline-block;
+}
+
+@media (min-width: 300px) and (max-width: 900px) {
+  main {
+    width: 100vw;
+  }
+}
+@media (min-width: 900px) {
+  main {
+    display: flex;
+  }
+}
+main #dz,
+main #kb,
+main #crochet {
+  display: flex;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main #dz,
+main #kb,
+main #crochet {
+    flex-direction: column;
+  }
+}
+main #dz > div,
+main #kb > div,
+main #crochet > div {
+  display: flex;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main #dz > div > div,
+main #kb > div > div,
+main #crochet > div > div {
+    width: 50%;
+  }
+}
+@media (min-width: 900px) {
+  main #vereniging {
+    width: 66.5%;
+  }
+  main #vereniging .img-cont > div {
+    width: 50%;
+  }
+  main #crochet {
+    width: 33.5%;
+  }
+  main #crochet > div {
+    flex-direction: column;
+  }
+  main #crochet > div > div {
+    height: 50%;
+  }
+}
+main img {
+  padding: 5%;
+  width: 90%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (min-width: 300px) and (max-width: 900px) {
+  main #dz,
+main #kb {
+    margin-bottom: 5%;
+  }
+  main #crochet {
+    margin-bottom: 3%;
+  }
+  main .text-cont {
+    background-color: rgba(246, 242, 240, 0.2);
+    padding: 2%;
+    margin: 0 2%;
+  }
+}
+@media (min-width: 900px) {
+  main #vereniging,
+main #crochet {
+    position: relative;
+  }
+  main .text-cont {
+    opacity: 0;
+  }
+  main #dz:hover .img-cont,
+main #kb:hover .img-cont,
+main #crochet:hover .img-cont {
+    opacity: 0.7;
+  }
+  main #dz:hover .text-cont,
+main #kb:hover .text-cont,
+main #crochet:hover .text-cont {
+    opacity: 1;
+  }
+  main img {
+    transition: 0.5s ease;
+  }
+  main #vereniging .text-cont {
+    height: 40%;
+    padding: 5%;
+  }
+  main #crochet .text-cont {
+    height: 90%;
+    padding: 10% 5%;
+  }
+  main .text-cont {
+    width: 90%;
+    position: absolute;
+    transition: 0.5s ease;
+    background-color: rgba(77, 89, 91, 0.8);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  }
+}/*# sourceMappingURL=kleding.css.map */
